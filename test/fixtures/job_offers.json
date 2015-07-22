@@ -2,16 +2,25 @@
   {
       "id": 0,
       "title": "Title 1",
-      "description": "Description 1"
+      "company_name": "Company 1",
+      "description": "Description 1",
+      "salary": 2700,
+      "internal_reference": "LEET42"
   },
   {
       "id": 1,
       "title": "Title 2",
-      "description": "Description 2"
+      "company_name": "Company 2",
+      "description": "Description 2",
+      "salary": 2800,
+      "internal_reference": "LEET43"
   },
   {
       "id": 2,
       "title": "Title 3",
-      "description": "Description 3"
+      "company_name": "Company 3",
+      "description": "Description 3",
+      "salary": 2900,
+      "internal_reference": "LEET44"
   }
 ]
