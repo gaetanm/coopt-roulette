@@ -14,5 +14,8 @@ class Recommendation
 
   def initialize(attributes={})
     super
+    # Maybe better to add this stuff to a method like before_save...
+    self.male = true if self.male == nil or self.male == 'true'
+    self.male = false if self.male == 'false'
   end
 end
