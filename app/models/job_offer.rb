@@ -3,11 +3,11 @@ class JobOffer
 
   attr_accessor :id, :title, :description, :salary, :internal_reference,
   :company_name, :status, :published_at, :closed_at, :created_at, :updated_at
-  
+
   def initialize(attributes={})
     super
   end
-  
+
   def self.find(id)
     get_json_data.each do |v|
       return self.new v if v['id'] == id
@@ -20,8 +20,7 @@ class JobOffer
   end
 
   def self.random
-    r = Random.new
-    self.find r.rand(self.count)
+    self.find Random.rand(self.count)
   end
 
   def self.get_json_data
