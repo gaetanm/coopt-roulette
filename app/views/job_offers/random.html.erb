@@ -1,61 +1,11 @@
-<%= @job_offer.title %>
-<br />
-<%= @job_offer.description %>
-<br />
-<%= @job_offer.salary %>
-<br />
-<%= @job_offer.internal_reference %>
-<br />
-<%= button_to "Next offer", root_path, :method => "get" %>
-<h2>Recommend this offer:</h2>
-<% flash.each do |key, value| %>
-  <%= content_tag :div, value, class: "flash #{key}" %>
-<% end %>
-<% if @recommendation.errors.any? %>
-  <p>Oops:</p>
-    <ul>
-    <% @recommendation.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
-<% end %>
-<%= form_for(@recommendation) do |f| %>
-<%= f.hidden_field :job_offer_id, :value => @job_offer.id %>
-  <p>
-    <%= f.radio_button :male, true, checked: @recommendation.male == true %>
-    <%= f.label :male, "Male" %>
-    <%= f.radio_button :male, false, checked: @recommendation.male == false %>
-    <%= f.label :male, "Female" %>
-  </p>
-  <p>
-    <%= f.label :first_name %><br>
-    <%= f.text_field :first_name %>
-  </p>
-  <p>
-    <%= f.label :last_name %><br>
-    <%= f.text_field :last_name %>
-  </p>
-  <p>
-    <%= f.label :email %><br>
-    <%= f.text_field :email%>
-  </p>
-  <p>
-    <%= f.label :phone %><br>
-    <%= f.text_field :phone %>
-  </p>
-  <p>
-    <%= f.label :company %><br>
-    <%= f.text_field :company %>
-  </p>
-  <p>
-    <%= f.label :job_title %><br>
-    <%= f.text_field :job_title %>
-  </p>
-  <p>
-    <%= f.label :linkedin_url %><br>
-    <%= f.text_field :linkedin_url %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
+<h1>CooptRoulette</h1>
+<% if @job_offer != nil %>
+  <%= @job_offer.title %><br />
+  <%= @job_offer.description %><br />
+  <%= @job_offer.salary %><br />
+  <%= @job_offer.internal_reference %><br />
+  <%= button_to "Next offer", root_path, :method => "get" %>
+  <%= render 'recommendations/form' %>
+<% else %>
+  <p><strong>There is no more offer to see.</strong></p>
 <% end %>
