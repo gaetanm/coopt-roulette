@@ -5,7 +5,8 @@
       "company_name": "Company 1",
       "description": "Description 1",
       "salary": 2700,
-      "internal_reference": "LEET42"
+      "internal_reference": "LEET42",
+      "closed_at": "2007-12-04"
   },
   {
       "id": 1,
@@ -13,7 +14,8 @@
       "company_name": "Company 2",
       "description": "Description 2",
       "salary": 2800,
-      "internal_reference": "LEET43"
+      "internal_reference": "LEET43",
+      "closed_at": "2015-12-04"
   },
   {
       "id": 2,
@@ -21,6 +23,7 @@
       "company_name": "Company 3",
       "description": "Description 3",
       "salary": 2900,
-      "internal_reference": "LEET44"
+      "internal_reference": "LEET44",
+      "closed_at": "2015-12-04"
   }
 ]

@@ -8,6 +8,10 @@ class JobOffer
     super
   end
 
+  def closed?
+    closed_at.to_date < Date.today
+  end
+
   def self.find(id)
     get_json_data.each do |v|
       return self.new v if v['id'] == id

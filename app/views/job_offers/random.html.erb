@@ -6,9 +6,13 @@
 <br />
 <%= @job_offer.internal_reference %>
 <br />
+<%= button_to "Next offer", root_path, :method => "get" %>
 <h2>Recommend this offer:</h2>
+<% flash.each do |key, value| %>
+  <%= content_tag :div, value, class: "flash #{key}" %>
+<% end %>
 <% if @recommendation.errors.any? %>
-  <p>Nope:</p>
+  <p>Oops:</p>
     <ul>
     <% @recommendation.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>

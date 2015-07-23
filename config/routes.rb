@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   root 'job_offers#random'
   
+  # I guess it's better to do something like:
+  # resources :job_offers do
+  #   resources :recommendations
+  # end
+  # But it's hard given that has_many etc. seem not work with the ActiveModel
+
   post 'recommendations' => 'recommendations#create'
   
   # The priority is based upon order of creation: first created -> highest priority.
