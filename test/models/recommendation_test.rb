@@ -6,11 +6,15 @@ class RecommendationTest < ActiveSupport::TestCase
   end
 
   test "first name should be present" do
+    @recommendation.email = "foo@tbar.com"
+    @recommendation.last_name = "Bar"
     @recommendation.first_name = ""
     assert_not @recommendation.valid?
   end
 
   test "last name should be present" do
+    @recommendation.email = "foo@tbar.com"
+    @recommendation.first_name = "Foo"
     @recommendation.last_name = ""
     assert_not @recommendation.valid?
   end
